@@ -43,6 +43,7 @@ resource "aws_s3_bucket_policy" "cloudtrail_logs" {
 resource "aws_cloudtrail" "management_events" {
   name                          = "${var.project_name}-management-events"
   s3_bucket_name                = aws_s3_bucket.cloudtrail_logs.bucket
+  kms_key_id                    = aws_kms_key.cloudtrail_logs.arn
   enable_logging                = true
   is_multi_region_trail         = true
   include_global_service_events = true
