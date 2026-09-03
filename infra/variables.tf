@@ -9,3 +9,8 @@ variable "project_name" {
   type        = string
   default     = "secure-aws-devsecops-lab"
 }
+
+variable "alert_email" {
+  description = "Email address that receives security alerts"
+  type        = string
+}
